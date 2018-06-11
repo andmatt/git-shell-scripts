@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+#
+# git-cleanup
+#
+# Adapted from http://erikaybar.name/git-deleting-old-local-branches/
+# Deletes all branches in `remote` but not actually in origin ; then deletes the same branches locally
+# usage: git cleanup
+
+git remote prune origin 
+git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d  
+echo "INFO : Stale local and remote branches pruned"
