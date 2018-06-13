@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+#
+# git-fix_commit
+#
+# Matt Guan
+# Changes commit text, and does a soft reset to HEAD^
+# usage: git fix_commit {commit_name}
+
+git commit --amend -m %1
+git reset --soft HEAD^
+echo "INFO : stage the files you want and run git commit -c --no-edit ORIG_HEAD

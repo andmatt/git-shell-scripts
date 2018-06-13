@@ -6,10 +6,19 @@
 # fast forward your entire branch to origin/master
 # usage: git magic
 
+changes=`git status --porcelain --untracked-files=no`
+
 git fetch origin
 echo "INFO : fetched origin"
-git stash
-git rebase origin/master
-git stash apply -q stash@{0}
-git stash drop
-echo "INFO : branch now at origin/master"
+
+if [[ $changes ]]; then
+    echo "INFO: tracked changes detected - stashing"
+    git stash
+    git rebase origin/master
+    git stash apply -q stash@{0}
+    git stash drop
+    echo "INFO : branch now at origin/master"
+else
+    echo "INFO: no tracked changes, no need to stash"
+    git rebase origin/master
+fi

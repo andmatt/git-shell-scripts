@@ -4,14 +4,14 @@
 #
 # Matt Guan
 # move all changes to a clean branch, fast forward it to origin/master, and push it to origin
-# usage git new_branch {branch_name}
+# usage: git new_branch {branch_name}
 
-exists=`git rev-parse --verify $1`
+exists=`git branch --list $1`
 
-if [ -z $1 ]; then
+if [[ -z $1 ]]; then
 	echo "WARNING: Set branch name as argument"
 	exit;
-elif [ -n $exists ]; then
+elif [[ $exists ]]; then
 	echo "WARNING: Branch already exists ; did you mean to git checkout and use git magic?"
 	exit;
 else

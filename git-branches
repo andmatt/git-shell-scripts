@@ -4,7 +4,7 @@
 #
 # Matt Guan
 # list all branches local & origin with verbose output
-# usage git all_branches
+# usage: git all_branches
 
 git fetch origin
 echo "INFO: fetched origin"
