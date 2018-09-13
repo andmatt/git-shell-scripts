@@ -8,4 +8,4 @@
 
 git commit --amend -m %1
 git reset --soft HEAD^
-echo "INFO : stage the files you want and run git commit -c --no-edit ORIG_HEAD
+echo "INFO : stage the files you want and run git commit -c --no-edit ORIG_HEAD"

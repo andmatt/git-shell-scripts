@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+#
+# git-fix_commit
+#
+# Matt Guan
+# commit -m, but ignore pre-commit hooks
+# usage: git lazy_commit {commit_name}
+
+git commit --no-verify -m %1
+echo "INFO : successfully commited"

@@ -16,7 +16,6 @@ if [[ $changes ]]; then
     git stash
     git rebase origin/master
     git stash apply -q stash@{0}
-    git stash drop
     echo "INFO : branch now at origin/master"
 else
     echo "INFO: no tracked changes, no need to stash"
