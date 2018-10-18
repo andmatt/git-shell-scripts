@@ -6,9 +6,9 @@ First `cd` to your desired file location and clone the repo
 
     git clone https://github.com/andmatt/git-shell-scripts.git
 
-After cloning the repo - add the location to `$PATH` by adding the following line to your `.bash_profile`.
+After cloning the repo - add the location to `$PATH` by adding the following line to your `.bash_profile`. Change the command to reference the directory where `git-shell-scripts` was saved.
 
-    source ~/.bash_profile
+    export PATH="$HOME/git-shell-scripts:$PATH"
 
 You can use the `echo >>` command or manually open the file with `open -a TextEdit ~/.bash_profile`
 
